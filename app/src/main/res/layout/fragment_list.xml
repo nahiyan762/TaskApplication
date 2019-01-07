@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activitys.HomeActivity">
+
+    <include
+        layout="@layout/toolbar_layout"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/recyclerViewList"
+        android:layout_above="@+id/layout_adView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/fab_add_list"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="16sp"
+        android:layout_marginBottom="56sp"
+        android:src="@drawable/add"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/layout_adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-9786524414253219/4438666634">
+
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

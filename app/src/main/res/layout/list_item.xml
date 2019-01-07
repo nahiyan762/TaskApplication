@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.project.taskapp.utils.CheckableLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_userImage"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_width="50sp"-->
+            <!--android:layout_height="50sp" />-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_toRightOf="@+id/iv_userImage"-->
+            <!--android:layout_toLeftOf="@+id/checkBox"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:weightSum="2.0">-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/item_name"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:lines="1"-->
+                <!--android:gravity="center|left"-->
+                <!--android:paddingRight="10sp"-->
+                <!--android:layout_weight="1.0"-->
+                <!--android:text="TextView" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_userEmail"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:gravity="center|left"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1.0"-->
+                <!--android:lines="1"-->
+                <!--android:text="TextView" />-->
+
+
+        <!--</LinearLayout>-->
+
+
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/checkBox"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:clickable="false"-->
+            <!--android:focusable="false" />-->
+
+    <!--</RelativeLayout>-->
+
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginRight="5sp" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="5sp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"/>
+
+</com.android.project.taskapp.utils.CheckableLinearLayout>

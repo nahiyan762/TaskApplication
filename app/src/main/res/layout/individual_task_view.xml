@@ -1,0 +1,267 @@
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="@drawable/comment_background"
+    android:stateListAnimator="@anim/comment_selection"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/rl_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/hints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/iv_status"
+                android:layout_width="30sp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/tv_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/iv_status"
+                android:lines="1"
+                android:textSize="20sp"
+                android:layout_toLeftOf="@+id/iv_status"
+                android:layout_alignParentLeft="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hints"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            android:layout_marginRight="10dp">
+
+            <RelativeLayout
+                android:id="@+id/view1"
+                android:layout_marginLeft="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_taskPriority"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="ContentDescription"
+                    android:src="@drawable/ic_priority"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:id="@+id/tv_taskPriority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_taskPriority"
+                    android:layout_alignBottom="@+id/iv_taskPriority"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/iv_taskPriority"
+                    android:lines="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_taskPriority" />
+
+                <ImageView
+                    android:id="@+id/iv_taskCalender"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/iv_taskPriority"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="ContentDescription"
+                    android:src="@drawable/ic_calendar" />
+
+                <TextView
+                    android:id="@+id/tv_taskCalender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_taskCalender"
+                    android:layout_alignBottom="@+id/iv_taskCalender"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/iv_taskCalender"
+                    android:lines="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_taskCalender" />
+
+                <ImageView
+                    android:id="@+id/iv_taskAssign"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/iv_taskCalender"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="ContentDescription"
+                    android:src="@drawable/ic_assign" />
+
+                <TextView
+                    android:id="@+id/tv_taskAssign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_taskAssign"
+                    android:layout_alignBottom="@+id/iv_taskAssign"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/iv_taskAssign"
+                    android:lines="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_taskAssign" />
+
+                <ImageView
+                    android:id="@+id/iv_taskTime"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/iv_taskAssign"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="ContentDescription"
+                    android:src="@drawable/ic_alarm" />
+
+                <TextView
+                    android:id="@+id/tv_taskTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_taskTime"
+                    android:layout_alignBottom="@+id/iv_taskTime"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/iv_taskTime"
+                    android:lines="1"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_taskTime" />
+
+                <ImageView
+                    android:id="@+id/iv_taskNote"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/iv_taskTime"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="ContentDescription"
+                    android:src="@drawable/ic_task" />
+
+                <TextView
+                    android:id="@+id/tv_taskNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_taskNote"
+                    android:layout_alignBottom="@+id/iv_taskNote"
+                    android:layout_toEndOf="@+id/iv_taskPriority"
+                    android:layout_marginStart="10dp"
+                    android:lines="1"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_taskNote" />
+
+                <TextView
+                    android:id="@+id/iv_border"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10sp"
+                    android:layout_below="@+id/iv_taskNote"
+                    android:background="@drawable/border_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/view1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/iv_delete"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_task_delete"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/iv_done"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_done"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/iv_comment"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/massages_admin"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/iv_edit"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/edit_admin"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/iv_description"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/next_admin"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

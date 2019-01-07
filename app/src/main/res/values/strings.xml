@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Task Application</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This id is too short</string>
+    <string name="error_incorrect_password">This id is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="btn_link_to_register">Don\'t have an account? REGISTER</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_task">Enter Task</string>
+    <string name="enter_priority">Enter Priority</string>
+    <string name="enter_note">Enter Note</string>
+    <string name="enter_date">Enter Date</string>
+    <string name="enter_time">Enter Time</string>
+    <string name="enter_assign">Enter Assign</string>
+    <string name="attach_file">Attach File</string>
+    <string name="delete">Delete</string>
+</resources>

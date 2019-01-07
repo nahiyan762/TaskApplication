@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/toolbar"
+    app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profileImage"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_centerVertical="true"
+            android:layout_margin="5sp" />
+
+        <TextView
+            android:id="@+id/tv_profileName"
+            android:layout_width="match_parent"
+            android:lines="1"
+            android:textColor="@color/colorWhite"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_profileImage"
+            android:layout_marginRight="@dimen/padd_10"
+            android:layout_centerVertical="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_totalListSelectedItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:lines="1"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

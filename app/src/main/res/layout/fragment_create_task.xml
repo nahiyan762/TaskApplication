@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:titleTextColor="@color/colorWhite"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/add_reminder_layout_top"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:layout_height="88dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/et_taskName"
+            android:layout_marginRight="72dp"
+            android:hint="Enter Task"
+            android:textSize="25sp"
+            android:lines="4"
+            android:minLines="4"
+            android:gravity="top|left"
+            android:textColor="@android:color/white"
+            android:scrollHorizontally="false"
+            android:textColorHint="@color/primary_text_disabled_material_dark"
+            android:inputType="textCapWords|textMultiLine"
+            android:layout_marginLeft="1dp"
+            android:layout_height="80dp"/>
+    </LinearLayout>
+
+    <com.github.aakira.compoundicontextview.CompoundIconTextView
+        android:id="@+id/tv_taskPriority"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@+id/add_reminder_layout_top"
+        app:cit_drawableLeft="@drawable/ic_priority"
+        android:paddingLeft="@dimen/padd_10"
+        android:paddingRight="@dimen/padd_10"
+        app:cit_iconHeight="30sp"
+        app:cit_iconWidth="30sp"
+        android:drawablePadding="50dp"
+        android:hint="@string/enter_priority"
+        android:gravity="center|left"
+        android:textSize="17sp"
+        android:background="@drawable/textview_bottom_border"
+        android:textColor="@color/colorPrimary"
+        app:cit_iconColor="@color/colorAccent" />
+
+    <com.github.aakira.compoundicontextview.CompoundIconTextView
+        android:id="@+id/tv_taskNote"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@+id/tv_taskPriority"
+        app:cit_drawableLeft="@drawable/ic_task"
+        android:paddingLeft="@dimen/padd_10"
+        android:paddingRight="@dimen/padd_10"
+        app:cit_iconHeight="30sp"
+        app:cit_iconWidth="30sp"
+        android:drawablePadding="50dp"
+        android:hint="@string/enter_note"
+        android:gravity="center|left"
+        android:textSize="17sp"
+        android:background="@drawable/textview_bottom_border"
+        android:textColor="@color/colorPrimary"
+        app:cit_iconColor="@color/colorAccent" />
+
+    <com.github.aakira.compoundicontextview.CompoundIconTextView
+        android:id="@+id/tv_taskDate"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@+id/tv_taskNote"
+        app:cit_drawableLeft="@drawable/ic_calendar"
+        android:paddingLeft="@dimen/padd_10"
+        android:paddingRight="@dimen/padd_10"
+        app:cit_iconHeight="30sp"
+        app:cit_iconWidth="30sp"
+        android:drawablePadding="50dp"
+        android:hint="@string/enter_date"
+        android:gravity="center|left"
+        android:textSize="17sp"
+        android:background="@drawable/textview_bottom_border"
+        android:textColor="@color/colorPrimary"
+        app:cit_iconColor="@color/colorAccent" />
+
+    <com.github.aakira.compoundicontextview.CompoundIconTextView
+        android:id="@+id/tv_taskTime"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@+id/tv_taskDate"
+        app:cit_drawableLeft="@drawable/ic_alarm"
+        android:paddingLeft="@dimen/padd_10"
+        android:paddingRight="@dimen/padd_10"
+        app:cit_iconHeight="30sp"
+        app:cit_iconWidth="30sp"
+        android:drawablePadding="50dp"
+        android:hint="@string/enter_time"
+        android:gravity="center|left"
+        android:textSize="17sp"
+        android:background="@drawable/textview_bottom_border"
+        android:textColor="@color/colorPrimary"
+        app:cit_iconColor="@color/colorAccent" />
+
+    <com.github.aakira.compoundicontextview.CompoundIconTextView
+        android:id="@+id/tv_taskAssign"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@+id/tv_taskTime"
+        app:cit_drawableLeft="@drawable/ic_assign"
+        android:paddingLeft="@dimen/padd_10"
+        android:paddingRight="@dimen/padd_10"
+        app:cit_iconHeight="30sp"
+        app:cit_iconWidth="30sp"
+        android:drawablePadding="50dp"
+        android:hint="@string/enter_assign"
+        android:gravity="center|left"
+        android:textSize="17sp"
+        android:background="@drawable/textview_bottom_border"
+        android:textColor="@color/colorPrimary"
+        app:cit_iconColor="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/iv_done"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/add_reminder_layout_top"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-25dp"
+        android:background="@drawable/add"
+        android:layout_marginRight="@dimen/padd_10" />
+
+ </RelativeLayout>

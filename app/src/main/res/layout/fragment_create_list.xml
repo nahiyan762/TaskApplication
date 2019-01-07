@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/colorWhite"
+        android:background="@color/colorPrimary">
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/add_reminder_layout_top"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:layout_height="88dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/et_listName"
+            android:layout_marginRight="72dp"
+            android:hint="Enter List"
+            android:textSize="25sp"
+            android:lines="4"
+            android:minLines="4"
+            android:gravity="top|left"
+            android:textColor="@android:color/white"
+            android:scrollHorizontally="false"
+            android:textColorHint="@color/primary_text_disabled_material_dark"
+            android:inputType="textCapWords|textMultiLine"
+            android:layout_marginLeft="1dp"
+            android:layout_height="80dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_done"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/add_reminder_layout_top"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-25dp"
+        android:background="@drawable/add"
+        android:layout_marginRight="@dimen/padd_10" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@+id/add_reminder_layout_top"
+            android:id="@+id/userList"
+            android:layout_marginTop="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+</RelativeLayout>
