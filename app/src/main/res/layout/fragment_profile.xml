@@ -54,9 +54,8 @@
 
     <ListView
         android:id="@+id/listView"
-        android:theme="@style/ListFont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cardView"/>
+        android:layout_below="@+id/cardView" />
 
 </RelativeLayout>

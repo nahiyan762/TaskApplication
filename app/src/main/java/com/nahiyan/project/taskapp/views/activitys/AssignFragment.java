@@ -56,7 +56,7 @@ public class AssignFragment extends Fragment {
             }
         }
 
-        ArrayAdapter<String>  adapter=new ArrayAdapter<>(AppMain.instance, android.R.layout.simple_list_item_single_choice,stringArrayList);
+        ArrayAdapter<String>  adapter=new ArrayAdapter<>(AppMain.instance, R.layout.assign_listview,stringArrayList);
         lv_taskAssign.setAdapter(adapter);
 
         lv_taskAssign.setOnItemClickListener(new AdapterView.OnItemClickListener() {

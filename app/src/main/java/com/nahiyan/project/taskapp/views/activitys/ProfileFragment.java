@@ -89,7 +89,7 @@ public class ProfileFragment extends Fragment implements ProfileFragmentView, Vi
         profile_name.setText(user.getUsername());
 
         String[] files = {"Rate App","Share App","Contact Us","Logout"};
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(AppMain.instance, android.R.layout.simple_list_item_1,files);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(AppMain.instance, R.layout.profile_listview,files);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 
