@@ -3,23 +3,21 @@ package com.nahiyan.project.taskapp.views.activitys;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
+import android.widget.TextView;
+
 import com.nahiyan.project.taskapp.R;
 import com.nahiyan.project.taskapp.adapter.CreateListUserAdapter;
 import com.nahiyan.project.taskapp.application.AppMain;
@@ -31,11 +29,6 @@ import com.nahiyan.project.taskapp.views.CreateListView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.auth.FirebaseAuth;
-import com.nahiyan.project.taskapp.adapter.CreateListUserAdapter;
-import com.nahiyan.project.taskapp.models.User;
-import com.nahiyan.project.taskapp.models.UserLists;
-import com.nahiyan.project.taskapp.presenters.CreateListPresenter;
-import com.nahiyan.project.taskapp.views.CreateListView;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -43,7 +36,7 @@ import java.util.Objects;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CreateListFragment extends Fragment implements CreateListView {
+public class CreateListFragment extends Fragment implements CreateListView, SearchView.OnQueryTextListener, View.OnClickListener {
 
     FirebaseAuth auth;
     UserLists userLists;
@@ -53,12 +46,7 @@ public class CreateListFragment extends Fragment implements CreateListView {
     CreateListUserAdapter createListUserAdapter;
     private InterstitialAd mInterstitialAd;
     EditText et_listName;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
+    private TextView tv_note;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,7 +76,13 @@ public class CreateListFragment extends Fragment implements CreateListView {
 
         //fragment view element initialization
         this.et_listName = view.findViewById(R.id.et_listName);
-        ImageView iv_done = view.findViewById(R.id.iv_done);
+        ImageView iv_createList = view.findViewById(R.id.iv_createList);
+        iv_createList.setOnClickListener(this);
+
+        this.tv_note = view.findViewById(R.id.tv_note);
+
+        SearchView searchView = view.findViewById(R.id.search);
+        searchView.setOnQueryTextListener(this);
 
         this.recyclerView = view.findViewById(R.id.userList);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(),4);
@@ -98,6 +92,7 @@ public class CreateListFragment extends Fragment implements CreateListView {
 
 
         if(this.getArguments() != null){
+            this.tv_note.setVisibility(View.GONE);
             userLists = (UserLists) getArguments().getSerializable("UserListsObject");
             et_listName.setText(userLists.getListName());
             this.userArrayList.addAll(userLists.getListAssignUser());
@@ -106,26 +101,13 @@ public class CreateListFragment extends Fragment implements CreateListView {
             userLists = new UserLists();
         }
 
-
-        //List creation for click listener
-        iv_done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String listName = et_listName.getText().toString();
-                if(userLists.getListOwner() == null && userLists.getListId() == null){
-                    createListPresenter.addListName(listName,userArrayList);
-                } else{
-                    createListPresenter.editListName(listName,userArrayList,userLists);
-                }
-            }
-        });
-
         return view;
     }
 
     //get Userlist from Presenter getUsers() and set in ListView
     @Override
     public void setUsers(User users) {
+        this.tv_note.setVisibility(View.GONE);
         int counter = 0;
         if(userArrayList.isEmpty()){
             userArrayList.add(users);
@@ -168,33 +150,29 @@ public class CreateListFragment extends Fragment implements CreateListView {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.list_menu,menu);
-        MenuItem item = menu.findItem(R.id.menu_list_search);
-        SearchView searchView = (SearchView) item.getActionView();
-        searchView.setQueryHint("Search User By Email");
-        searchView(searchView);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    private void searchView(SearchView searchView) {
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                createListPresenter.searchUser(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-    }
-
     public void deleteUserFromList(int position) {
         this.userArrayList.remove(position);
         this.createListUserAdapter.notifyItemRemoved(position);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        createListPresenter.searchUser(s);
+        return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        String listName = et_listName.getText().toString();
+        if(userLists.getListOwner() == null && userLists.getListId() == null){
+            createListPresenter.addListName(listName,userArrayList);
+        } else{
+            createListPresenter.editListName(listName,userArrayList,userLists);
+        }
     }
 }

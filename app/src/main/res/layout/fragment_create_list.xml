@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,52 +9,82 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleTextColor="@color/colorWhite"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/colorWhite">
 
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:id="@+id/add_reminder_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_below="@+id/toolbar"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
-        android:layout_height="88dp">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <EditText
-            android:layout_width="match_parent"
             android:id="@+id/et_listName"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="1dp"
             android:layout_marginRight="72dp"
+            android:gravity="top|left"
             android:hint="Enter List"
-            android:textSize="25sp"
+            android:inputType="textCapWords|textMultiLine"
             android:lines="4"
             android:minLines="4"
-            android:gravity="top|left"
-            android:textColor="@android:color/white"
             android:scrollHorizontally="false"
+            android:textColor="@android:color/white"
             android:textColorHint="@color/primary_text_disabled_material_dark"
-            android:inputType="textCapWords|textMultiLine"
-            android:layout_marginLeft="1dp"
-            android:layout_height="80dp"/>
+            android:textSize="25sp"
+            android:importantForAutofill="no" />
     </LinearLayout>
 
+
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_reminder_layout_top"
+        android:background="@color/colorPrimaryDark"
+        android:iconifiedByDefault="false"
+        android:theme="@style/Search"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:queryBackground="@drawable/query_background_round"
+        android:queryHint="@string/search_view_query_hint"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_below="@+id/search"
+        android:layout_marginTop="50sp"
+        android:visibility="visible"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="If you want group task add all the user here"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/userList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        android:layout_marginTop="5sp" />
+
     <ImageView
-        android:id="@+id/iv_done"
+        android:id="@+id/iv_createList"
         android:layout_width="50sp"
         android:layout_height="50sp"
-        android:layout_below="@+id/add_reminder_layout_top"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
         android:background="@drawable/add"
         android:layout_marginRight="@dimen/padd_10" />
-
-        <android.support.v7.widget.RecyclerView
-            android:layout_below="@+id/add_reminder_layout_top"
-            android:id="@+id/userList"
-            android:layout_marginTop="20sp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
 </RelativeLayout>

@@ -25,4 +25,5 @@
     <string name="enter_assign">Enter Assign</string>
     <string name="attach_file">Attach File</string>
     <string name="delete">Delete</string>
+    <string name="search_view_query_hint">Search User By Email</string>
 </resources>
