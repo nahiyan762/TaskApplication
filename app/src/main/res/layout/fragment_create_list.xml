@@ -30,7 +30,7 @@
             android:layout_marginLeft="1dp"
             android:layout_marginRight="72dp"
             android:gravity="top|left"
-            android:hint="Enter List"
+            android:hint="@string/enter_project"
             android:inputType="textCapWords|textMultiLine"
             android:lines="4"
             android:minLines="4"
@@ -68,7 +68,7 @@
         android:textColor="@android:color/darker_gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="If you want group task add all the user here"/>
+        android:text="@string/textview_note"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/userList"

@@ -24,16 +24,19 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9786524414253219~3129454397"/>
 
-        <activity android:name=".views.activitys.LoginActivity">
+        <activity
+            android:name=".views.activitys.LoginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.activitys.SignUpActivity" />
-        <activity android:name=".views.activitys.HomeActivity" />
-        <activity android:name=".views.activitys.TaskActivity" />
+        <activity android:name=".views.activitys.SignUpActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".views.activitys.HomeActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".views.activitys.TaskActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
 
         <service android:name=".notifications.MyFirebaseIdService"
             android:enabled="true"

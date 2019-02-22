@@ -26,4 +26,6 @@
     <string name="attach_file">Attach File</string>
     <string name="delete">Delete</string>
     <string name="search_view_query_hint">Search User By Email</string>
+    <string name="enter_project">Enter Project</string>
+    <string name="textview_note">All project member must add here</string>
 </resources>

@@ -8,6 +8,11 @@ buildscript {
     }
 }
 apply plugin: 'com.android.application'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
 
@@ -18,7 +23,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 2
-        versionName "1.0"
+        versionName "1.1"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
